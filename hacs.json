@@ -1,0 +1,8 @@
+{
+  "name": "TVHeadend EPG",
+  "content_in_root": false,
+  "domains": ["tvheadend_epg"],
+  "country": "HU",
+  "iot_class": "cloud_polling",
+  "render_readme": true
+}
