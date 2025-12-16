@@ -1,10 +1,6 @@
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from .const import DOMAIN
 
-async def async_setup_entry(hass, entry, async_add_entities):
-    coordinator = hass.data[DOMAIN][entry.entry_id]
-    async_add_entities([TVHeadendEPGSensor(coordinator)])
 
 class TVHeadendEPGSensor(CoordinatorEntity, SensorEntity):
     _attr_name = "TVHeadend EPG"
@@ -20,5 +16,5 @@ class TVHeadendEPGSensor(CoordinatorEntity, SensorEntity):
     @property
     def extra_state_attributes(self):
         return {
-            "epg": self.coordinator.data
+            "epg": self.coordinator.data,
         }
